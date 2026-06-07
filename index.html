@@ -790,6 +790,39 @@
 </footer>
 
 <script>
+  // Cookie consent
+  function setCookie(name, value, days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + '=' + value + '; expires=' + date.toUTCString() + '; path=/; SameSite=Lax';
+  }
+  function getCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i].trim();
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+    }
+    return null;
+  }
+  function aceitarCookies() {
+    setCookie('iipr-consent', 'aceito', 365);
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function recusarCookies() {
+    setCookie('iipr-consent', 'recusado', 365);
+    window['ga-disable-G-DQYVE7B82S'] = true;
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  // Verifica consentimento anterior
+  (function() {
+    var consent = getCookie('iipr-consent');
+    if (consent) {
+      document.getElementById('cookie-banner').style.display = 'none';
+      if (consent === 'recusado') window['ga-disable-G-DQYVE7B82S'] = true;
+    }
+  })();
+
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('aberto');
