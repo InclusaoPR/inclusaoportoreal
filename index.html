@@ -5,6 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Instituto Inclusão Porto Real — Defendendo direitos e promovendo inclusão das pessoas com deficiência no Sul Fluminense.">
 <title>Instituto Inclusão Porto Real</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQYVE7B82S"></script>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+  <p>
+    🍪 Este site usa cookies e tecnologias de rastreamento (Google Analytics) para analisar o tráfego e melhorar sua experiência.
+    Seus dados são tratados conforme nossa
+    <a href="https://drive.google.com/file/d/1dZ682Ozy2mj7DO-1opOfdTfKfczrwF2_/view?usp=drive_link" target="_blank" rel="noopener">Política de Proteção de Dados</a>.
+    Você pode revogar seu consentimento a qualquer momento pelo e-mail <strong>institutoinclusaopr@gmail.com</strong>.
+  </p>
+  <div class="cookie-btns">
+    <button class="btn-cookie-aceitar" onclick="aceitarCookies()">Aceitar</button>
+    <button class="btn-cookie-recusar" onclick="recusarCookies()">Recusar</button>
+  </div>
+</div>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQYVE7B82S');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -308,6 +331,45 @@
   }
   footer strong { color: #fff; }
   footer p { font-size: 0.9rem; margin-bottom: 6px; }
+
+
+  /* ── COOKIE BANNER ── */
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+    background: #0d2040; color: #fff;
+    padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    border-top: 3px solid var(--verde);
+  }
+  #cookie-banner p {
+    font-size: 0.92rem; color: rgba(255,255,255,0.85);
+    margin: 0; flex: 1; min-width: 260px; line-height: 1.6;
+  }
+  #cookie-banner a { color: #7ec880; text-decoration: underline; }
+  .cookie-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+  .btn-cookie-aceitar {
+    background: var(--verde); color: #fff;
+    font-family: var(--font-titulo); font-weight: 600; font-size: 0.9rem;
+    padding: 10px 24px; border-radius: 2px; border: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-cookie-aceitar:hover { background: #1b5e20; }
+  .btn-cookie-recusar {
+    background: transparent; color: rgba(255,255,255,0.7);
+    font-family: var(--font-titulo); font-weight: 600; font-size: 0.9rem;
+    padding: 10px 24px; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.3); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-cookie-recusar:hover { border-color: #fff; color: #fff; }
+  @media (max-width: 768px) {
+    #cookie-banner { padding: 16px 20px; }
+    #cookie-banner p { font-size: 0.85rem; }
+    .cookie-btns { width: 100%; }
+    .btn-cookie-aceitar, .btn-cookie-recusar { flex: 1; text-align: center; }
+  }
 
   /* ── ANIMAÇÕES ── */
   @keyframes fadeUp {
@@ -648,6 +710,10 @@
     <p style="margin-top:24px; font-size:1.05rem; color:rgba(255,255,255,0.85);">
       A associação é <strong style="color:#fff;">gratuita</strong> e aberta a pessoas com deficiência, familiares e apoiadores da causa.
     </p>
+    <p style="margin-top:12px; font-size:0.85rem; color:rgba(255,255,255,0.65);">
+      🔒 Os dados fornecidos no formulário serão tratados conforme nossa
+      <a href="https://drive.google.com/file/d/1dZ682Ozy2mj7DO-1opOfdTfKfczrwF2_/view?usp=drive_link" target="_blank" rel="noopener" style="color:#7ec880;">Política de Proteção de Dados</a>.
+    </p>
   </div>
 </section>
 
@@ -693,8 +759,13 @@
       </div>
       <div>
         <h3 style="font-family:var(--font-titulo);font-size:1.1rem;font-weight:700;color:var(--azul);margin-bottom:24px;letter-spacing:0.04em;">Envie uma Mensagem</h3>
-        <p style="font-size:1rem; color:var(--cinza-medio); margin-bottom:24px; text-align:justify;">
+        <p style="font-size:1rem; color:var(--cinza-medio); margin-bottom:16px; text-align:justify;">
           Clique no botão abaixo para acessar nosso formulário de contato. É rápido e fácil!
+        </p>
+        <p style="font-size:0.85rem; color:var(--cinza-medio); margin-bottom:24px; background:var(--cinza-claro); padding:12px 16px; border-left:3px solid var(--azul); border-radius:2px; text-align:justify;">
+          🔒 Seus dados serão tratados exclusivamente para responder sua mensagem, conforme nossa
+          <a href="https://drive.google.com/file/d/1dZ682Ozy2mj7DO-1opOfdTfKfczrwF2_/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--azul);">Política de Proteção de Dados</a>.
+          Para exercer seus direitos como titular, contate nosso DPO: <strong>institutoinclusaopr@gmail.com</strong>.
         </p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuycOaCoMNoOOf3ff9uwwSa8xwUzipm02M6t0xQxNLlzJBJQ/viewform?usp=publish-editor"
            target="_blank" rel="noopener"
@@ -713,7 +784,8 @@
   <p style="margin-top:12px;font-size:0.82rem;opacity:0.6;">
     CNPJ 66.915.161/0001-13<br>
     Rua Um, nº 236, Casa 1 – Loteamento Veneza – Centro – Porto Real – RJ – 27570-000<br>
-    Governança &nbsp;·&nbsp; Inclusão &nbsp;·&nbsp; Protagonismo &nbsp;·&nbsp; Proteção Social
+    Governança &nbsp;·&nbsp; Inclusão &nbsp;·&nbsp; Protagonismo &nbsp;·&nbsp; Proteção Social<br>
+    <a href="https://drive.google.com/file/d/1dZ682Ozy2mj7DO-1opOfdTfKfczrwF2_/view?usp=drive_link" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); font-size:0.8rem;">Política de Proteção de Dados</a> &nbsp;·&nbsp; <span style="font-size:0.8rem;">DPO: institutoinclusaopr@gmail.com</span>
   </p>
 </footer>
 
