@@ -539,3 +539,110 @@ button:focus:not(:focus-visible) {
     scroll-behavior: auto !important;
   }
 }
+
+  /* ── CONTATO INLINE GRID — MOBILE ── */
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns:1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-template-columns:1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1fr 1fr"],
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns: repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  /* ── MOBILE GLOBAL — overflow e padding ── */
+  @media (max-width: 768px) {
+
+    /* Impede transbordamento horizontal */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    /* Container com padding seguro */
+    .container {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      max-width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    /* Seções — padding lateral reduzido */
+    section, [style*="padding:80px 40px"],
+    [style*="padding: 80px 40px"] {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    /* Hero interno */
+    .hero-interno {
+      padding: 100px 16px 40px !important;
+    }
+
+    /* Hero index */
+    #inicio .hero-content {
+      padding: 100px 16px 60px !important;
+      max-width: 100% !important;
+    }
+
+    /* Imagem hero */
+    #inicio .hero-image {
+      display: none;
+    }
+
+    /* Cards de ação — 1 coluna */
+    .acoes-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* MVV cards — 1 coluna */
+    .mvv-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Docs grid — 1 coluna */
+    .docs-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Notícia card */
+    .noticia-card {
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+
+    /* Tabelas inline — forçar scroll horizontal */
+    table {
+      display: block;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    /* Botões lado a lado — empilhar */
+    div[style*="display:flex"][style*="gap:16px"],
+    div[style*="display: flex"][style*="gap: 16px"] {
+      flex-wrap: wrap !important;
+    }
+
+    /* Redes sociais */
+    .redes-sociais {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 16px !important;
+      text-align: center;
+    }
+
+    /* Formulários */
+    input, textarea, select {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
