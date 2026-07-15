@@ -8,7 +8,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
@@ -48,7 +49,10 @@
 <!-- NAVEGAÇÃO -->
 <nav role="navigation" aria-label="Menu principal">
   <a href="index.html" class="nav-logo">
+    <picture>
+    <source srcset="logo.webp" type="image/webp">
     <img src="logo.png" alt="Logo Instituto Inclusão Porto Real" width="101" height="101" style="height:101px;width:auto;" fetchpriority="high">
+  </picture>
     <span style="color:var(--azul);">Instituto Inclusão <span style="color:var(--verde);">Porto Real</span></span>
   </a>
   <ul class="nav-links">
@@ -93,7 +97,10 @@
         Trabalhamos para que pessoas com deficiência e suas famílias em Porto Real tenham acesso pleno a direitos, serviços e oportunidades — sem exceção.
       </p>
       <div class="hero-foto-mobile">
-        <img src="hero.jpg" alt="Grupo diverso de pessoas com e sem deficiência reunidas em parque, celebrando juntas" width="400" height="218" width="800" height="600"  fetchpriority="high">
+        <picture>
+  <source srcset="hero.webp" type="image/webp">
+  <img src="hero.jpg" alt="Grupo diverso de pessoas com e sem deficiência reunidas em parque, celebrando juntas" width="400" height="218"   fetchpriority="high" >
+</picture>
       </div>
       <div class="hero-btns">
         <a href="o-que-fazemos.html" class="btn-primario">Conheça nossas ações</a>
