@@ -227,6 +227,7 @@
   #transparencia { background: var(--azul); }
   #transparencia .secao-titulo { color: #fff; }
   #transparencia .secao-label { color: #7ec880; }
+  .hero-interno .secao-label { color: #ffffff; }
   #transparencia .secao-linha { background: #7ec880; }
   #transparencia .secao-texto { color: rgba(255,255,255,0.8); }
   .docs-grid {
@@ -646,3 +647,7 @@ button:focus:not(:focus-visible) {
       box-sizing: border-box;
     }
   }
+
+  /* ── CONTRASTE — Correção WCAG AA ── */
+  footer p { opacity: 1; }
+  footer a { opacity: 1; }
