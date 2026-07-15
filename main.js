@@ -1,16 +1,18 @@
 // ── MENU MOBILE ──────────────────────────────────────────────────────────────
 function toggleMenu() {
-  var menu = document.getElementById('nav-mobile');
+  var menu = document.getElementById('mobileMenu');
   menu.classList.toggle('aberto');
 }
 
 document.addEventListener('click', function(e) {
-  var menu = document.getElementById('nav-mobile');
+  var menu = document.getElementById('mobileMenu');
   var hamburger = document.querySelector('.nav-hamburger');
-  if (menu && hamburger && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+  if (!menu || !hamburger) return;
+  // Fechar apenas se clicar FORA do menu E FORA do botão hamburger
+  if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
     menu.classList.remove('aberto');
   }
-});
+}, true); // capture phase — garante que o evento é processado antes de fechar
 
 // ── COOKIE CONSENT ────────────────────────────────────────────────────────────
 function setCookie(name, value, days) {
