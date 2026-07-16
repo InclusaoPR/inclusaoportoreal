@@ -227,7 +227,6 @@
   /* ── TRANSPARÊNCIA ── */
   #transparencia { background: var(--azul); }
   #transparencia .secao-titulo { color: #fff; }
-  #transparencia .secao-label { color: #7ec880; }
   .hero-interno .secao-label { color: #ffffff; }
   #transparencia .secao-linha { background: #7ec880; }
   #transparencia .secao-texto { color: rgba(255,255,255,0.8); }
@@ -418,8 +417,7 @@
     div[style*="grid-template-columns:1fr 1fr; gap:60px"] { grid-template-columns: 1fr !important; }
     div[style*="grid-template-columns:1fr 1fr; gap:24px"] { grid-template-columns: 1fr !important; }
     div[style*="grid-template-columns:repeat(auto-fit,minmax(300px"] { grid-template-columns: 1fr !important; }
-    .secao-label { font-size: 0.95rem; }
-    .secao-titulo { font-size: 1.9rem; }
+        .secao-titulo { font-size: 1.9rem; }
     .secao-texto { font-size: 1.1rem; }
     .mvv-card p { font-size: 1.05rem; }
     .mvv-card h3 { font-size: 1.2rem; }
