@@ -177,6 +177,7 @@
     width: 48px; height: 4px;
     background: var(--verde); margin-bottom: 32px;
   }
+  .hero-interno .secao-texto { color: rgba(255,255,255,0.85); }
   .secao-texto { color: var(--cinza-medio); max-width: 640px; font-size: 1.05rem; text-align: justify; }
 
   /* ── QUEM SOMOS ── */
@@ -229,8 +230,7 @@
   #transparencia .secao-titulo { color: #fff; }
   .hero-interno .secao-label { color: #ffffff; }
   #transparencia .secao-linha { background: #7ec880; }
-  #transparencia .secao-texto { color: rgba(255,255,255,0.8); }
-  .docs-grid {
+  #transparencia   .docs-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px; margin-top: 48px;
   }
@@ -418,7 +418,8 @@
     div[style*="grid-template-columns:1fr 1fr; gap:24px"] { grid-template-columns: 1fr !important; }
     div[style*="grid-template-columns:repeat(auto-fit,minmax(300px"] { grid-template-columns: 1fr !important; }
         .secao-titulo { font-size: 1.9rem; }
-    .secao-texto { font-size: 1.1rem; }
+    .hero-interno 
+  
     .mvv-card p { font-size: 1.05rem; }
     .mvv-card h3 { font-size: 1.2rem; }
     .acao-card h3 { font-size: 1.15rem; }
