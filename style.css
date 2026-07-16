@@ -8,7 +8,7 @@
     --branco: #ffffff;
     --cinza-claro: #f5f7fa;
     --cinza-texto: #333333;
-    --cinza-medio: #666666;
+    --cinza-medio: #555555;
     --font-titulo: 'Oswald', sans-serif;
     --font-corpo: 'Source Sans 3', sans-serif;
   }
@@ -162,9 +162,9 @@
   section { padding: 80px 40px; }
   .container { max-width: 1100px; margin: 0 auto; }
   .secao-label {
-    font-family: var(--font-titulo); font-size: 0.8rem;
-    letter-spacing: 0.15em; font-weight: 600;
-    color: var(--verde); text-transform: uppercase;
+    font-family: var(--font-titulo); font-size: 0.85rem;
+    letter-spacing: 0.15em; font-weight: 700;
+    color: #1b5e20; text-transform: uppercase;
     margin-bottom: 12px;
   }
   .secao-titulo {
@@ -651,3 +651,10 @@ button:focus:not(:focus-visible) {
   /* ── CONTRASTE — Correção WCAG AA ── */
   footer p { opacity: 1; }
   footer a { opacity: 1; }
+
+  /* ── CONTRASTE RODAPÉ — WCAG AA ── */
+  footer { color: rgba(255,255,255,0.9); }
+  footer p { color: rgba(255,255,255,0.9); }
+  footer a { color: rgba(255,255,255,0.9) !important; }
+  footer span { color: rgba(255,255,255,0.9); }
+  footer button { color: rgba(255,255,255,0.9) !important; }
