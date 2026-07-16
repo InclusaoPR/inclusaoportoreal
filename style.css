@@ -1,5 +1,6 @@
+@import url("fonts.css");
 
-  :root {
+:root {
     --azul: #2B6CC4;
     --azul-escuro: #1a4a8a;
     --azul-claro: #e8f0fb;
@@ -349,9 +350,7 @@
   /* ── PERFORMANCE HINTS ── */
   img { max-width: 100%; height: auto; }
   .hero-image-col img { content-visibility: auto; }
-  @font-face { font-display: swap; }
-
-  /* ── ANIMAÇÕES ── */
+    /* ── ANIMAÇÕES ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
