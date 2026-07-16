@@ -84,7 +84,7 @@
 <!-- QR CODE PIX -->
       <div style="text-align:center;">
         <p style="font-family:var(--font-titulo); font-size:1.1rem; font-weight:700; color:var(--azul-escuro); margin-bottom:24px; letter-spacing:0.04em;">PIX — Escaneie o QR Code</p>
-        <img src="qr-pix.png" loading="lazy" alt="QR Code PIX do Instituto Inclusão Porto Real" width="280" height="280" loading="lazy" style="max-width:280px; width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+        <img src="qr-pix.png" fetchpriority="high" alt="QR Code PIX do Instituto Inclusão Porto Real" width="280" height="280" style="max-width:280px; width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
         <div style="margin-top:20px; background:var(--azul-claro); border:2px solid var(--azul); border-radius:6px; padding:16px 20px;">
           <p style="font-family:var(--font-titulo); font-size:0.85rem; font-weight:700; color:var(--azul); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">Chave PIX (CNPJ)</p>
           <p style="font-family:var(--font-titulo); font-size:1.4rem; font-weight:700; color:var(--azul-escuro); letter-spacing:0.04em;">66.915.161/0001-13</p>
@@ -162,22 +162,46 @@
           </p>
         </div>
 
-        <!-- iframe Google Forms -->
-        <div style="max-width:640px; margin:0 auto; border-radius:8px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08); border:1px solid #e5e7eb;">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScCShzleP8O3khvSBgc-R2nSHSATZpLzTKCT3sBsmPNsx1yGQ/viewform?embedded=true"
-            width="100%"
-            height="869"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Formulário de Cadastro de Apoiadores — Instituto Inclusão Porto Real"
-            loading="lazy"
-            style="display:block; background:#fff;">
-            Carregando formulário…
-          </iframe>
+        <!-- iframe Google Forms — carregamento diferido via IntersectionObserver -->
+        <div id="forms-container" style="max-width:640px; margin:0 auto; border-radius:8px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08); border:1px solid #e5e7eb; min-height:200px; background:#f9fafb; display:flex; align-items:center; justify-content:center;">
+          <div id="forms-placeholder" style="text-align:center; padding:40px 20px;">
+            <div style="font-size:2rem; margin-bottom:12px;">📋</div>
+            <p style="font-family:var(--font-titulo); font-size:1rem; color:var(--azul-escuro); margin-bottom:8px;">Carregando formulário...</p>
+            <p style="font-size:0.85rem; color:var(--cinza-medio);">Role a página para visualizar o formulário</p>
+          </div>
         </div>
-
+        <script>
+          (function() {
+            var container = document.getElementById('forms-container');
+            var loaded = false;
+            function loadForms() {
+              if (loaded) return;
+              loaded = true;
+              var placeholder = document.getElementById('forms-placeholder');
+              if (placeholder) placeholder.remove();
+              container.style.minHeight = 'auto';
+              container.style.display = 'block';
+              container.style.background = '#fff';
+              var iframe = document.createElement('iframe');
+              iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLScCShzleP8O3khvSBgc-R2nSHSATZpLzTKCT3sBsmPNsx1yGQ/viewform?embedded=true';
+              iframe.width = '100%';
+              iframe.height = '869';
+              iframe.frameBorder = '0';
+              iframe.setAttribute('title', 'Formulário de Cadastro de Apoiadores — Instituto Inclusão Porto Real');
+              iframe.style.display = 'block';
+              iframe.style.background = '#fff';
+              container.appendChild(iframe);
+            }
+            if ('IntersectionObserver' in window) {
+              var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) { loadForms(); observer.disconnect(); }
+              }, { rootMargin: '200px' });
+              observer.observe(container);
+            } else {
+              setTimeout(loadForms, 2000);
+            }
+          })();
+        </script>
         <!-- Nota pós-formulário -->
         <p style="text-align:center; font-size:0.82rem; color:var(--cinza-medio); margin-top:14px; line-height:1.5;">
           Após o cadastro, nossa equipe entrará em contato pelo WhatsApp ou e-mail informado para confirmar sua contribuição e enviar o certificado.
